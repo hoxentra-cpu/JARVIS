@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: HAIRUL-OS
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -16,11 +19,12 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
+          build-root-directory: HAIRUL-OS
       - name: Build both apps
         run: gradle :app:assembleDebug :launcher:assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: jarvis-debug-apks
           path: |
-            app/build/outputs/apk/debug/*.apk
-            launcher/build/outputs/apk/debug/*.apk
+            HAIRUL-OS/app/build/outputs/apk/debug/*.apk
+            HAIRUL-OS/launcher/build/outputs/apk/debug/*.apk
