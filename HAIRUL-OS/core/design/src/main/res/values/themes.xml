@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Shared window theme for both apps. Compose draws everything; this avoids a white flash at launch. -->
-    <style name="Theme.Jarvis" parent="android:Theme.Material.NoActionBar">
-        <item name="android:windowBackground">@color/jarvis_background</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-    </style>
-</resources>
